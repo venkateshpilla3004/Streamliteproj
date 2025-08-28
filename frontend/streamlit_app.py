@@ -5,7 +5,7 @@ import os
 st.title("Chatbot Demo")
 
 # Detect backend URL (Render or Local)
-BACKEND_URL = os.getenv("BACKEND_URL", "http://127.0.0.1:8000")
+BACKEND_URL = os.getenv("BACKEND_URL", "https://streamliteproj.onrender.com")
 
 st.write(f"🔗 Using backend: {BACKEND_URL}")
 
