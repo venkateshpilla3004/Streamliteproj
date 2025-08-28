@@ -1,9 +1,19 @@
 import os
+from dotenv import load_dotenv
 from openai import OpenAI
 
-client = OpenAI(api_key=os.getenv("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"))
+# Load environment variables from .env file
+load_dotenv()
+
+# Initialize OpenAI client with API key from .env
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+# Model and temperature from env (with defaults)
 MODEL = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
 TEMPERATURE = float(os.getenv("OPENAI_TEMPERATURE", "0.2"))
+
+print("API KEY LOADED:", os.getenv("OPENAI_API_KEY"))
+
 
 SYSTEM_PERSONAS = {
     "Default": "You are a helpful assistant.",
